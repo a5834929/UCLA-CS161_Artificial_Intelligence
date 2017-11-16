@@ -1,0 +1,100 @@
+1.	Padovan Sequence
+> (PAD 0)
+1
+> (PAD 1)
+1
+> (PAD 2)
+1
+> (PAD 3)
+2
+> (PAD 4)
+2
+> (PAD 5)
+3
+> (PAD 6)
+4
+> (PAD 7)
+5
+> (PAD 8)
+7
+> (PAD 9)
+9
+> (PAD 10)
+12
+> (PAD 20)
+200
+> (PAD 50)
+922111
+
+For N=1~30, it only takes less than a second to compute the number 
+while when N = 50 it takes 10 seconds. As N goes up, it needs more time
+to compute. With N = 10000, it causes the stack to overflow because the
+depth of recursion is too large. The level of recursion is O(logN), and
+the number of additions needed is O(2^(logN-1)), which grows exponentially
+with the recursion depth.
+--------------------------------------------------------------------------
+2.	Number of Additions of PAD(N)
+> (SUMS 0)
+0
+> (SUMS 1)
+0
+> (SUMS 2)
+0
+> (SUMS 3)
+1
+> (SUMS 4)
+1
+> (SUMS 5)
+2
+> (SUMS 6)
+3
+> (SUMS 7)
+4
+> (SUMS 8)
+6
+> (SUMS 9)
+8
+> (SUMS 10)
+11
+> (SUMS 20)
+199
+> (SUMS 50)
+922110
+
+The relationship between PAD and SUMS is PAD(N) = SUMS(N)+1.
+Since the definitions of SUMS and PAD are the same, the difference
+of the initial values causes SUMS off by 1 due to an extra addition
+of each branching point.
+
+    SUMS(3):0 + the addition at N=3, which is 1               
+    /     \
+SUMS(1):0   SUMS(0):0
+
+    PAD(3):2
+    /     \
+PAD(1):1   PAD(0):1
+--------------------------------------------------------------------------
+3.	Anonymized Tree Representation
+> (ANON '42)
+?
+> (ANON 'FOO)
+?
+> (ANON '(FOO))
+(?)
+> (ANON '(((L E) F) T))
+(((? ?) ?) ?)
+> (ANON '(5 FOO 3.1 -0.2))
+(? ? ? ?)
+> (ANON '(1 (FOO 3.1) -0.2))
+(? (? ?) ?)
+> (ANON '(((1 2) (FOO 3.1)) (BAR -0.2)))
+(((? ?) (? ?)) (? ?))
+> (ANON '(R (I (G (H T)))))
+(? (? (? (? ?))))
+
+
+
+
+
+
+

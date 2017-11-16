@@ -1,0 +1,33 @@
+Question 1
+
+> (BFS '(ROOT))
+(ROOT)
+> (BFS '((((L E) F) T)))
+(T F L E)
+> (BFS '((R (I (G (H T))))))
+(R I G H T)
+> (BFS '(((A (B)) C (D))))
+(C A D B)
+> (BFS '((T (H R E) E)))
+(T E H R E)
+> (BFS '((A ((C ((E) D)) B))))
+(A B C D E)
+> (BFS '((A) ((B)) (((((C)))))))
+(A B C)
+> (BFS '((A ((B (C D)) (E (F))))))
+(A B E C D F)
+> (BFS '(((A B) (C D) E)))
+(E A B C D)
+> (BFS '(((A B) (C D) (((E))))))
+(A B C D E)
+--------------------------------------------------------------------------
+Question 2
+
+> (DFS '(nil nil nil nil) nil)
+((NIL NIL NIL NIL) (T T NIL NIL) (NIL T NIL NIL) (T T T NIL) (NIL NIL T NIL) (T NIL T T) (NIL NIL T T) (T T T T))
+> (DFS '(NIL T NIL NIL) '((NIL NIL NIL NIL) (T T NIL NIL)))
+((NIL NIL NIL NIL) (T T NIL NIL) (NIL T NIL NIL) (T T T NIL) (NIL NIL T NIL) (T NIL T T) (NIL NIL T T) (T T T T))
+> (DFS '(T T T NIL) nil)
+((T T T NIL) (NIL NIL T NIL) (T NIL T T) (NIL NIL T T) (T T T T))
+
+
